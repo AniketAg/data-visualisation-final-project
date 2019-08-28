@@ -177,7 +177,7 @@ void keyPressed()
     drawn_first_graph = 0;
     page_number = 2;
     graphTwoDrawn= false;
-    PFont font = createFont("Dyonisius.ttf", 10);
+    PFont font = createFont("SegoeUI-10", 10);
     textInput = new TextInput(this, font, 10);
     isFinished = false;
     if (found) barChart.draw(579, 137, 400, 180);
@@ -425,7 +425,7 @@ void mousePressed() {
 
 void drawCrimesTitles() {
   fill(50);
-  font = createFont("Dyonisius.ttf",10);
+  font = loadFont("SegoeUI-10.vlw");
   textFont(font);
   text("Burglary In A Dwelling", 50, 145);
   text("Burglary In Other Buildings", 50, 160);
@@ -476,7 +476,7 @@ float getDifferenceInCrimes(String date1, String date2, String crimeType) {
 
 void drawDifference(String crime, int x, int y) {
   fill(50);
-  font = createFont("Dyonisius.ttf",10);
+  font = loadFont("SegoeUI-10.vlw");
   textFont(font);
   boolean hasIncreased = false;  
   float difference = getDifferenceInCrimes(the_year2a, the_year2b, crime);

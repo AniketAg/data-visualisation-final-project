@@ -7,14 +7,14 @@ int temp_count;
 Table tempT  = new Table();
 PImage bg;
 PImage bg2;
-color c1 = #60FF05;
-color c2 = #9A05FF;
-color c3 = #FF0540;
-color c4 = #0539FF;
-color c5 = #05FFFD;
-color c6 = #05FF6B;
-color c7 = #FEFF05;
-color c8 = #FF1A05;
+color c1 = color(140, 236, 251);
+color c2 = color(95, 207, 225);
+color c3 = color(82, 183, 200);
+color c4 = color(62, 143, 157);
+color c5 = color(54, 122, 134);
+color c6 = color(40, 88, 97);
+color c7 = color(20, 45, 51);
+color c8 = color(12, 23, 26);
 boolean called = false;
 boolean did = false;
 int whatpressed = 1;
@@ -120,10 +120,10 @@ void drawPopup(int date, int x, int y, String name, int total, String crimeName)
   fill(180, 200);
   rect(x, y, 260, 30);
   fill(0);
-  font = createFont("Dyonisius.ttf",14);
+  font = loadFont("SegoeUI-16.vlw");
   textFont(font);
   text(name, x + 3, y+25);
-  font = createFont("Dyonisius.ttf",14);
+  font = loadFont("SegoeUI-12.vlw");
   textFont(font);
   text("Total of " + crimeName + " crimes: " + total, x + 3, y+50);
 
@@ -495,7 +495,7 @@ void setMapColourOverall(int date, String crimeType, GeoMap map) {
   //avoid showing if there's no data
   if (highest != 0) {
     fill(50);
-    font = createFont("Dyonisius.ttf",14);
+    font = loadFont("SegoeUI-16.vlw");
     textFont(font);
     text(highestName, 773, 435);
     text("Crimes: " + highest, 773, 450);
@@ -503,7 +503,7 @@ void setMapColourOverall(int date, String crimeType, GeoMap map) {
     text("Crimes: " + lowest, 773, 390);
   } else {
     fill(50);
-    font = createFont("Dyonisius.ttf",14);
+    font = loadFont("SegoeUI-16.vlw");
     textFont(font);
     text("N/A", 773, 435);
     text("N/A", 773, 375);
@@ -549,7 +549,7 @@ void setMapColourSpecific(int date, String crimeType, GeoMap map) {
 
 void drawMainTitle() {
   fill(50);
-  font = createFont("Dyonisius.ttf",36);
+  font = loadFont("SegoeUI-Bold-28.vlw");
   textFont(font);
   text(the_year + "/" + the_month, 50, 10);
   text("Crimes of London", 10, 40);
@@ -557,29 +557,29 @@ void drawMainTitle() {
 
 void drawCrimeTypeTitle() {
   fill(50);
-  font = createFont("Dyonisius.ttf",28);
+  font = loadFont("SegoeUI-28.vlw");
   textFont(font);
   text("Crime Type", 50, 520);
 }
 
 void drawDatePickerTitle() {
   fill(50);
-  font = createFont("Dyonisius.ttf",28);
+  font = loadFont("SegoeUI-28.vlw");
   textFont(font);
   text("Date Picker", 547, 550);
 }
 
 void drawLowHighCrimeTitle() {
   fill(50);
-  font = createFont("Dyonisius.ttf",16);
+  font = loadFont("SegoeUI-Bold-16.vlw");
   textFont(font);
   text("Lowest Crime:", 773, 355);
   text("Highest Crime:", 773, 415);
 }
 
 void drawDescription() {
-  //fill(50);
-  font = createFont("Dyonisius.ttf",14);
+  fill(50);
+  font = loadFont("SegoeUI-14.vlw");
   textFont(font);
   text("Explore the crime\nstatistics of different\nboroughs of London\nbased on the data from\n2017/03 - 2019/02\n\nPlease select the crime type\nto get its view on\nmap of London.\n\nHover the mouse over\nthe map to get the\nactual numbers of crime.\n\nUse the provided date\npicker to change the data\nbased on date.\n\nUse the navigation buttons\nto see other representations\nof data.", 30, 280);
 }
@@ -587,127 +587,127 @@ void drawDescription() {
 void createCrimeButtons() {
   // Define and create image buttons
   PImage b = loadImage("data/btn_1_1.png");
-  PImage r = loadImage("data/btn_1_1.png");
+  PImage r = loadImage("data/btn_1_2.png");
   int y = (height+100)/2 - b.height/2; 
   int w = b.width;
   int h = b.height;
   button = new image_buttons(50, y+170, w, h, b, r);
 
   PImage b2 = loadImage("data/btn_2_1.png");
-  PImage r2 = loadImage("data/btn_2_1.png");
+  PImage r2 = loadImage("data/btn_2_2.png");
   button2 = new image_buttons(50+160, y+170, w, h, b2, r2);
 
   PImage b3 = loadImage("data/btn_3_1.png");
-  PImage r3 = loadImage("data/btn_3_1.png");
+  PImage r3 = loadImage("data/btn_3_2.png");
   button3 = new image_buttons(50+320, y+170, w, h, b3, r3);
 
   PImage b4 = loadImage("data/btn_4_1.png");
-  PImage r4 = loadImage("data/btn_4_1.png");
+  PImage r4 = loadImage("data/btn_4_2.png");
   button4 = new image_buttons(50, y+215, w, h, b4, r4);
 
   PImage b5 = loadImage("data/btn_5_1.png");
-  PImage r5 = loadImage("data/btn_5_1.png");
+  PImage r5 = loadImage("data/btn_5_2.png");
   button5 = new image_buttons(50+160, y+215, w, h, b5, r5);
 
   PImage b6 = loadImage("data/btn_6_1.png");
-  PImage r6 = loadImage("data/btn_6_1.png");
+  PImage r6 = loadImage("data/btn_6_2.png");
   button6 = new image_buttons(50+320, y+215, w, h, b6, r6);
 
   PImage b7 = loadImage("data/btn_7_1.png");
-  PImage r7 = loadImage("data/btn_7_1.png");
+  PImage r7 = loadImage("data/btn_7_2.png");
   button7 = new image_buttons(50, y+260, w, h, b7, r7);
 
   PImage b8 = loadImage("data/btn_8_1.png");
-  PImage r8 = loadImage("data/btn_8_1.png");
+  PImage r8 = loadImage("data/btn_8_2.png");
   button8 = new image_buttons(50+160, y+260, w, h, b8, r8);
 
   PImage b9 = loadImage("data/btn_9_1.png");
-  PImage r9 = loadImage("data/btn_9_1.png");
+  PImage r9 = loadImage("data/btn_9_2.png");
   button9 = new image_buttons(50+320, y+260, w, h, b9, r9);
 }
 
 void createDatePickerButtons() {
   //create sldider buttons
-  PImage bb = loadImage("data/scroll_images/btn_s2__01.GIF");
-  PImage rr = loadImage("data/scroll_images/btn_s2__01.GIF");
-  int xx = 540;
+  PImage bb = loadImage("data/scroll_images/btn_s__01.gif");
+  PImage rr = loadImage("data/scroll_images/btn_s2__01.gif");
+  int xx = 550;
   int yy = 570; 
-  int ww = bb.width+10;
+  int ww = bb.width;
   int hh = bb.height;
   yr1 = new image_buttons(xx, yy, ww, hh, bb, rr);
 
-  PImage bb2 = loadImage("data/scroll_images/btn_s2__02.gif");
+  PImage bb2 = loadImage("data/scroll_images/btn_s__02.gif");
   PImage rr2 = loadImage("data/scroll_images/btn_s2__02.gif");
-  yr2 = new image_buttons(xx+47, yy, ww, hh, bb2, rr2);
+  yr2 = new image_buttons(xx+37, yy, ww, hh, bb2, rr2);
 
-  PImage bb3 = loadImage("data/scroll_images/btn_s2__03.gif");
+  PImage bb3 = loadImage("data/scroll_images/btn_s__03.gif");
   PImage rr3 = loadImage("data/scroll_images/btn_s2__03.gif");
-  yr3 = new image_buttons(xx+93, yy, ww, hh, bb3, rr3);
+  yr3 = new image_buttons(xx+73, yy, ww, hh, bb3, rr3);
 
   PImage bb4 = loadImage("data/scroll_images/btn_s__14.gif");
-  PImage rr4 = loadImage("data/scroll_images/btn_s__14.gif");
+  PImage rr4 = loadImage("data/scroll_images/btn_s2__14.gif");
   m1 = new image_buttons(xx, yy+37, ww, hh, bb4, rr4);
 
   PImage bb5 = loadImage("data/scroll_images/btn_s__15.gif");
-  PImage rr5 = loadImage("data/scroll_images/btn_s__15.gif");
+  PImage rr5 = loadImage("data/scroll_images/btn_s2__15.gif");
   m2 = new image_buttons(xx+37, yy+37, ww, hh, bb5, rr5);
 
   PImage bb6 = loadImage("data/scroll_images/btn_s__16.gif");
-  PImage rr6 = loadImage("data/scroll_images/btn_s__16.gif");
+  PImage rr6 = loadImage("data/scroll_images/btn_s2__16.gif");
   m3 = new image_buttons(xx+73, yy+37, ww, hh, bb6, rr6);
 
   PImage bb7 = loadImage("data/scroll_images/btn_s__05.gif");
-  PImage rr7 = loadImage("data/scroll_images/btn_s__05.gif");
+  PImage rr7 = loadImage("data/scroll_images/btn_s2__05.gif");
   m4 = new image_buttons(xx+109, yy+36, ww, hh, bb7, rr7);
 
   PImage bb8 = loadImage("data/scroll_images/btn_s__06.gif");
-  PImage rr8 = loadImage("data/scroll_images/btn_s__06.gif");
+  PImage rr8 = loadImage("data/scroll_images/btn_s2__06.gif");
   m5 = new image_buttons(xx+142, yy+36, ww, hh, bb8, rr8);
 
   PImage bb9 = loadImage("data/scroll_images/btn_s__07.gif");
-  PImage rr9 = loadImage("data/scroll_images/btn_s__07.gif");
+  PImage rr9 = loadImage("data/scroll_images/btn_s2__07.gif");
   m6 = new image_buttons(xx+179, yy+36, ww, hh, bb9, rr9);
 
   PImage bb10 = loadImage("data/scroll_images/btn_s__08.gif");
-  PImage rr10 = loadImage("data/scroll_images/btn_s__08.gif");
+  PImage rr10 = loadImage("data/scroll_images/btn_s2__08.gif");
   m7 = new image_buttons(xx+214, yy+36, ww, hh, bb10, rr10);
 
   PImage bb11 = loadImage("data/scroll_images/btn_s__09.gif");
-  PImage rr11 = loadImage("data/scroll_images/btn_s__09.gif");
+  PImage rr11 = loadImage("data/scroll_images/btn_s2__09.gif");
   m8 = new image_buttons(xx+250, yy+36, ww, hh, bb11, rr11);
 
   PImage bb12 = loadImage("data/scroll_images/btn_s__10.gif");
-  PImage rr12 = loadImage("data/scroll_images/btn_s__10.gif");
+  PImage rr12 = loadImage("data/scroll_images/btn_s2__10.gif");
   m9 = new image_buttons(xx+287, yy+36, ww, hh, bb12, rr12);
 
   PImage bb13 = loadImage("data/scroll_images/btn_s__11.gif");
-  PImage rr13 = loadImage("data/scroll_images/btn_s__11.gif");
+  PImage rr13 = loadImage("data/scroll_images/btn_s2__11.gif");
   m10 = new image_buttons(xx+323, yy+36, ww, hh, bb13, rr13);
 
   PImage bb14 = loadImage("data/scroll_images/btn_s__12.gif");
-  PImage rr14 = loadImage("data/scroll_images/btn_s__12.gif");
+  PImage rr14 = loadImage("data/scroll_images/btn_s2__12.gif");
   m11 = new image_buttons(xx+359, yy+36, ww, hh, bb14, rr14);
 
   PImage bb15 = loadImage("data/scroll_images/btn_s__13.png");
-  PImage rr15 = loadImage("data/scroll_images/btn_s__13.png");
+  PImage rr15 = loadImage("data/scroll_images/btn_s2__13.png");
   m12 = new image_buttons(xx+395, yy+36, ww, hh, bb15, rr15);
 
   PImage btnplay1 = loadImage("data/btn_play.png");
-  PImage btnplay2 = loadImage("data/btn_play.png");
+  PImage btnplay2 = loadImage("data/btn_play2.png");
   btn_play = new image_buttons(xx+394, yy, ww, hh, btnplay1, btnplay2);
 
   PImage btnpstop1 = loadImage("data/btn_stop.png");
-  PImage btnpstop2 = loadImage("data/btn_stop.png");
+  PImage btnpstop2 = loadImage("data/btn_stop2.png");
   btn_stop = new image_buttons(xx+394, yy, ww, hh, btnpstop1, btnpstop2);
 
   PImage btnmap1 = loadImage("data/btn_map1.png");
-  PImage btnmap2 = loadImage("data/btn_map1.png");
+  PImage btnmap2 = loadImage("data/btn_map2.png");
   int ww2 = btnmap1.width;
   int hh2 = btnmap1.height;
   btn_map = new image_buttons(xx+184, yy-570, ww2, hh2, btnmap1, btnmap2);
 
   PImage btngrp1 = loadImage("data/btn_graph1.png");
-  PImage btngrp2 = loadImage("data/btn_graph1.png");
+  PImage btngrp2 = loadImage("data/btn_graph2.png");
   btn_graph = new image_buttons(xx+328, yy-570, ww2, hh2, btngrp1, btngrp2);
 }
 void updateDateBtns() {
@@ -878,7 +878,7 @@ void mouseClicked() {
     page_number = 2;
     graphTwoDrawn= false;
 
-    PFont font = createFont("Dyonisius.ttf", 10);
+    PFont font = createFont("SegoeUI-10", 10);
     textInput = new TextInput(this, font, 10);
     isFinished = false;
     if (found) barChart.draw(579, 137, 400, 180);
