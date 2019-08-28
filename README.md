@@ -35,6 +35,7 @@ Strengths would be:
  You can also see the change in the crime over the years in various crime types.  
 
  Able to see the total statistics of all the boroughs in the two years and the overall crime statistics for any specific borough. 
+
 Weaknesses would be: 
 
  Doesn’t show the crime increase/decrease from one month to another in terms of percentage which I would like to include in it later on. 
